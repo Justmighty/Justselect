@@ -28,11 +28,17 @@ $border-radius: 5px;
   background: $c-background;
   width: $width;
   border-radius: $border-radius;
+  position: relative;
 
   &-options {
     &--hidden {
       display: none;
     }
+
+    position: absolute;
+    width: 100%;
+    overflow: visible;
+    z-index: 1000;
   }
 
   &__option {
@@ -40,6 +46,7 @@ $border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
     color: $c-text;
+    background: $c-background;
     border-bottom: 1px solid $c-border-between;
     display: flex;
     align-items: center;
