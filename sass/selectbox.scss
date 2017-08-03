@@ -48,12 +48,16 @@ $border-radius: 5px;
     color: $c-text;
     background: $c-background;
     border-bottom: 1px solid $c-border-between;
+    border-left: 1px solid $c-border-color;
+    border-right: 1px solid $c-border-color;
     display: flex;
     align-items: center;
     transition: 100ms linear all;
 
     &:last-child {
-      border-bottom: none;
+      border-bottom: 1px solid $c-border-color;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
     }
 
     &:hover {
