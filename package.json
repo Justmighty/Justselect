@@ -1,0 +1,29 @@
+{
+  "name": "justselect",
+  "version": "0.0.1",
+  "description": "Input select lightweight styling library",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "gulp css",
+    "js:build": "gulp js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justmighty/Justselect.git"
+  },
+  "author": "Justmighty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Justmighty/Justselect/issues"
+  },
+  "homepage": "https://github.com/Justmighty/Justselect#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.2.2"
+  }
+}
