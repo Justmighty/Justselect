@@ -1,7 +1,5 @@
 # Justselect - Input select lightweight styling library
 
-Demo: http://demo.justmighty.space/justselect/
-
 ## What is it?
 
 Creating custom-styled select boxes was always painful. Pure CSS cannot do this and many of JavaScript libraries which can are so messy, big and contain some unnecessary things. We just wanted to get some clear and lightweight solution.
