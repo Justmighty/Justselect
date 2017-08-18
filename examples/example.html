@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Justselect example #1</title>
+    <link rel="stylesheet" href="../css/selectbox.css">
+    <script type="text/javascript" src="../js/selectbox.js"></script>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 10pt;
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 22pt;
+        font-weight: 300;
+      }
+
+      label {
+        display: block;
+        margin: 50px 0 5px 5px;
+        font-weight: 600;
+      }
+
+      input[type="submit"] {
+        margin: 10px 0 10px 3px;
+        width: 100px;
+        padding: 5px;
+        font-size: 10pt;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #FF747D;
+        background: #ffffff;
+        border-radius: 5px;
+        box-shadow: 2px 2px 15px #ccc;
+        transition: 150ms linear all;
+      }
+
+      input[type="submit"]:hover {
+        background: #FF747D;
+      }
+
+      input[type="submit"]:focus, input[type="submit"]:active {
+        outline: none;
+      }
+
+      .justwrap {
+        margin-bottom: 50px;
+      }
+
+      form {
+        margin: 35px 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Justselect example #1</h1>
+
+    <p>
+      <em>Two selectboxes, the second one with a "Choose" label.</em>
+    </p>
+
+    <form method="get">
+
+      <label for="color">Color:</label>
+      <select name="color" id="color" class="justselect">
+        <option value="red">Dark Red</option>
+        <option value="green">Light Green</option>
+        <option value="blue">Blue</option>
+      </select>
+
+      <label for="food">Food:</label>
+      <select name="food" id="food" class="justselect">
+        <option value="" disabled selected>Choose...</option>
+        <option value="fish">Fish &amp; Chips</option>
+        <option value="spaghetti">Spaghetti</option>
+        <option value="wings">Chicken Wings</option>
+      </select>
+
+      <input type="submit" value="Send">
+
+    </form>
+
+  </body>
+</html>

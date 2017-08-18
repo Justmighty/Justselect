@@ -24,10 +24,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   // Target select boxes
-  var items = document.getElementsByTagName('select');
+  var items = document.getElementsByClassName('justselect');
 
   for (var i = 0; i < items.length; i++)
   {
+    items[i].required = true;
+
+    // For mobiles... We need to change our new selectboxes based on values of that old ones
+    items[i].onchange = function()
+    {
+      var target = document.getElementsByClassName('selectbox__label');
+      var val = this.value;
+      var pairId = this.dataset.sid;
+      var opts = this.options;
+
+      // Go through all labels...
+      for (a = 0; a < target.length; a++)
+      {
+        // Find the right one based on pair id
+        if (target[a].parentElement.dataset.pair === pairId)
+        {
+          // Go through all options
+          for (b = 0; b < opts.length; b++)
+          {
+            // Find the right one by its value
+            if (opts[b].value == val)
+            {
+              // Set a text
+              target[a].innerHTML = opts[b].innerHTML;
+              break;
+            }
+          }
+
+          break;
+        }
+      }
+    }
+
     // Get all <option> from each selectbox
     var options = items[i].options;
 
@@ -60,15 +93,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
         label.innerHTML = options[j].text;
       }
 
-      option.innerHTML = options[j].text;
-      wrap.appendChild(option);
-      newSelect.appendChild(wrap);
+      // Don't show a disabled option in the list, it's just used in the label and in the original input
+      if (!options[j].disabled)
+      {
+        option.innerHTML = options[j].text;
+        wrap.appendChild(option);
+        newSelect.appendChild(wrap);
+      }
+      
     }
 
     // Insert our new "div select box" after the original select elenent, and then hide that original select.
+    // Display overwritten by CSS - this rule doesn't apply in mobile view, there's need to be both of selects shown
+    // due to use of an original "scroll select" effect on iPhone and other devices.
     _insertAfter(items[i], newSelect);
     items[i].setAttribute('data-sid', 'select-' + (i+1));
     items[i].style.display = 'none';
+  }
+
+  var sel = document.getElementsByClassName('justselect');
+
+  // Wrap selectbox elements, needed to mobile-click works properly
+  for (var e = 0; e < sel.length; e++)
+  {
+    var container = document.createElement("div");
+    container.setAttribute('class', 'justwrap');
+
+    var box = document.getElementsByClassName('selectbox');
+
+    sel[e].parentElement.insertBefore(container, sel[e]);
+    box[e].parentElement.insertBefore(container, box[e]);
+    container.appendChild(sel[e]);
+    container.appendChild(box[e]);
   }
 
   // Dropdown function
