@@ -14,8 +14,8 @@ Creating custom-styled select boxes was always painful. Pure CSS cannot do this 
 ### Basic usage
 
 ```html
-<link rel="stylesheet" href="css/selectbox.css">
-<script type="text/javascript" src="js/selectbox.js"></script>
+<link rel="stylesheet" href="dist/selectbox.min.css">
+<script type="text/javascript" src="dist/selectbox.min.js"></script>
 ```
 
 Add the _justselect_ class to all `<select>` elements, which you want to style:
@@ -25,6 +25,8 @@ Add the _justselect_ class to all `<select>` elements, which you want to style:
 ```
 
 **That's all**, the Justselect library will do the rest for you! That sounds great, isn't that?
+
+You can change the look of selectboxes to your own style by editing the _selectbox.scss_ file, which you will find in the _sass_ directory.
 
 
 ### Adding a label
